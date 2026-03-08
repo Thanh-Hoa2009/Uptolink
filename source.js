@@ -1,4 +1,3 @@
-
 (function(){
 
 console.log("UptoLink Bypass running...");
@@ -7,11 +6,17 @@ const host = location.hostname;
 
 function autoClick(){
 
-    const btn = document.querySelector("button, a[href]");
-    if(btn){
-        btn.click();
-        console.log("Clicked button");
-    }
+    const interval = setInterval(() => {
+
+        const btn = document.querySelector("button, a[href]");
+
+        if(btn){
+            btn.click();
+            console.log("Clicked button");
+            clearInterval(interval);
+        }
+
+    }, 1500);
 
 }
 
